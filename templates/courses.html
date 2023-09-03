@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static\courses-slider.jpeg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+<div class="container my-3">
+  <h1 class="text-center">Our Courses</h1>
+</div>
+<div class="container">
+  <div class="row">
+    {% for i in allCourse %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{i.cimg.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{i.cname}}</h5>
+          <p class="card-text">{{i.csummary | truncatechars:100}}</p>
+          <a href="{{i.slug}}" class="btn btn-primary">Full Course Details</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock body %}

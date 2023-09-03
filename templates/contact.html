@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1 class="text-center">Send Your Query</h1>
+<div class="container">
+    <form action="/contact", method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="" class="form-label">Name</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Full Name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control" id="" placeholder="Enter Email" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Contact" name="contact">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Course</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Course" name="course">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock body %}
